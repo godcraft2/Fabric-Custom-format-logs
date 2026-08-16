@@ -15,10 +15,10 @@
             </Policies>
         </RollingRandomAccessFile>
         <!-- Appender for Custom logs-->
-        <Console name="CustomConsole" target="SYSTEM_OUT">
+        <Console name="customConsole" target="SYSTEM_OUT">
             <PatternLayout pattern="[%d{HH:mm:ss}] [Custom logs/%level]: %msg{nolookups}%n" />
         </Console>
-        <RollingRandomAccessFile name="CustomFile" fileName="logs/latest.log" filePattern="logs/%d{yyyy-MM-dd}-%i.log.gz">
+        <RollingRandomAccessFile name="customFile" fileName="logs/latest.log" filePattern="logs/%d{yyyy-MM-dd}-%i.log.gz">
             <PatternLayout pattern="[%d{HH:mm:ss}] [Custom logs/%level]: %msg{nolookups}%n" />
             <Policies>
                 <TimeBasedTriggeringPolicy />
@@ -29,8 +29,8 @@
     <Loggers>
         <!-- Logger for custom logs-->
         <Logger name="Custom" level="info" additivity="false">
-            <AppenderRef ref="CustomConsole"/>
-            <AppenderRef ref="CustomFile"/>
+            <AppenderRef ref="customConsole"/>
+            <AppenderRef ref="customFile"/>
             <AppenderRef ref="ServerGuiConsole"/>
         </Logger>
         <!-- Root logger Other logs-->
