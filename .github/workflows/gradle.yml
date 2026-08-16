@@ -37,7 +37,6 @@ jobs:
     - name: Build with Gradle Wrapper
       run: gradle build
 
-    # لیست کردن فایل‌های ساخته شده برای پیدا کردن مسیر دقیق
     - name: List built files
       run: |
         echo "=========================================="
@@ -49,10 +48,9 @@ jobs:
         ls -la build/libs/ 2>/dev/null || echo "build/libs not found"
         echo "=========================================="
 
-    # آپلود فایل JAR ساخته شده
     - name: Upload build artifact
       uses: actions/upload-artifact@v4
       with:
-        name: fabric-mod
+        name: Mods
         path: build/libs/*.jar
         if-no-files-found: error
