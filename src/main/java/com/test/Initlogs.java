@@ -8,7 +8,7 @@ import org.apache.logging.log4j.core.LoggerContext;
 import java.io.InputStream;
 
 public class Initlogs implements ModInitializer {
-    public static final String MOD_ID = "Custom";
+    public static final String MOD_ID = "custom";
     public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
 
     public static Identifier id(String path) {
