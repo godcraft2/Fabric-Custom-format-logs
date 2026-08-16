@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "${mod_id}",
+  "version": "${version}",
+  "name": "${mod_name}",
+  "description": "${mod_description}",
+  "authors": ["${mod_author}"],
+  "contact": {},
+  "license": "${mod_license}",
+  "icon": "${mod_icon}",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["${mod_main}"]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}"
+  }
+}
