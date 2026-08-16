@@ -14,7 +14,7 @@
                 <OnStartupTriggeringPolicy />
             </Policies>
         </RollingRandomAccessFile>
-        <!-- Appender for Custom logs-->
+        <!-- Appender for custom logs-->
         <Console name="customConsole" target="SYSTEM_OUT">
             <PatternLayout pattern="[%d{HH:mm:ss}] [Custom logs/%level]: %msg{nolookups}%n" />
         </Console>
@@ -28,7 +28,7 @@
     </Appenders>
     <Loggers>
         <!-- Logger for custom logs-->
-        <Logger name="Custom" level="info" additivity="false">
+        <Logger name="custom" level="info" additivity="false">
             <AppenderRef ref="customConsole"/>
             <AppenderRef ref="customFile"/>
         </Logger>
