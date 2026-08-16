@@ -18,10 +18,10 @@ A lightweight Minecraft Fabric mod that provides a separate custom log format fo
 The mod creates a dedicated Log4j2 logger named `custom`.
 
 Example:
-
+```java
     public static final String MOD_ID = "custom";
     public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
-
+```
 You can then write messages using:
 
     LOGGER.info("Loading Mod...");
@@ -51,11 +51,11 @@ This allows the mod to define a dedicated logger without creating another `lates
 ## Logger Configuration
 
 The custom logger is defined as:
-
+```xml
     <Logger name="custom" level="info" additivity="false">
         <AppenderRef ref="customConsole"/>
     </Logger>
-
+```
 The `additivity="false"` option prevents custom log messages from propagating to Minecraft's root logger.
 
 This prevents the same custom message from being printed twice.
@@ -63,11 +63,11 @@ This prevents the same custom message from being printed twice.
 ## Custom Console Format
 
 The custom console appender uses:
-
+```xml
     <Console name="customConsole" target="SYSTEM_OUT">
         <PatternLayout pattern="[%d{HH:mm:ss}] [Custom logs/%level]: %msg{nolookups}%n" />
     </Console>
-
+```
 Result:
 
     [15:20:10] [Custom logs/INFO]: Loading Mod...
@@ -85,7 +85,7 @@ This avoids potential conflicts caused by multiple file appenders attempting to 
 ## Usage
 
 Create your logger:
-
+```java
     import org.apache.logging.log4j.LogManager;
     import org.apache.logging.log4j.Logger;
 
@@ -98,7 +98,7 @@ Create your logger:
             LOGGER.info("Hello from my mod!");
         }
     }
-
+```
 Output:
 
     [15:20:10] [Custom logs/INFO]: Hello from my mod!
