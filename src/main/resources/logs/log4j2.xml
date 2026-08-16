@@ -31,7 +31,6 @@
         <Logger name="Custom" level="info" additivity="false">
             <AppenderRef ref="customConsole"/>
             <AppenderRef ref="customFile"/>
-            <AppenderRef ref="ServerGuiConsole"/>
         </Logger>
         <!-- Root logger Other logs-->
         <Root level="info">
